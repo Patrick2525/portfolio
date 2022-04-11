@@ -1,0 +1,8 @@
+.main {
+    border: 1px solid green;
+    position: relative;
+    top: 80px;
+    left: 330px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
