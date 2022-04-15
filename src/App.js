@@ -7,7 +7,7 @@ import Menus from "./Menus";
 
 function App() {
   return (
-    <>
+    <div>
       <Header/>
       <Nav>
         <Menus>
@@ -21,7 +21,7 @@ function App() {
       <Main>
         
       </Main>
-    </>
+    </div>
   );
 }
 
