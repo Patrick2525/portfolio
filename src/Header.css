@@ -23,7 +23,7 @@
 }
 
 .sidebar {
-    border: 2px solid pink;
+    /* border: 2px solid pink; */
     color: white;
     font-family: 'Roboto Slab', serif;
     display: flex;
@@ -37,19 +37,25 @@
     text-align: center;
 }
 
-
+.sidebar-header a {
+    text-decoration: none;
+}
 .sidebar-headerTitle {
+    color: white;
     border-bottom: 2px solid #dbdbdb;
     margin-top: 20px;
     margin-bottom: 0px;
     font-family: 'Roboto Slab', serif;
 }
+.sidebar-headerTitle:hover {
+    border-color: white;
+    transition: all 0.3s;
 
-.sidebar-header p {
-    margin-top: 0px;
-    
 }
 
+.sidebar-header p {
+    margin-top: 15px;
+}
 
 .sidebar-menus {
     margin-top: 0px;
@@ -65,7 +71,13 @@
 
 .sidebar-menu span {
     padding-bottom: 2px;
-    border-bottom: 2px solid #dbdbdb;    
+    border-bottom: 2px solid #dbdbdb;
+    cursor: pointer; 
+}
+.sidebar-menu span:hover{
+    border-color: white;
+    transition: all 0.3s;
+
 }
 
 .sidebar-icons {
@@ -75,14 +87,50 @@
     
 }
 .sidebar-icons li {
-
-    margin: 10px;
+    padding: 10px;
+    border-bottom: 2px solid #dbdbdb;
 }
+.sidebar-icons li:hover{
+    border-color: white;
+    transition: all 0.3s;
 
+}
 
 .sidebar-icons a {
     list-style: none;
     text-decoration: none;
     color: white;
+    font-size: 25px;
+}
 
+.sidebar-visitor {
+    margin-bottom: 10px;
+}
+
+.sidebar-hitBtn {
+    width: 30px;
+    padding: 2.5px;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    background-color: #424242;
+    cursor: pointer;
+}
+.sidebar-hitBtn:hover {
+    color: #424242;
+    background-color: white;
+    transition: all 0.3s;
+}
+
+.count {
+    border-radius: 2px;
+    display: inline-block;
+    width: 40px;
+    text-align: center;
+    color: #f5f5f5;
+    background-color: #e1bee7;
+    position: relative;
+    top:2px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px
 }

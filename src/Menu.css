@@ -8,4 +8,16 @@
     align-items: center;
     font-family: 'Noto Sans', sans-serif;
     font-size: 17px;
+    cursor: pointer;
+    
+}
+
+.menu:hover{
+    background-image: linear-gradient(
+        180deg,
+        transparent,
+        #fff,
+        #bdbdbd
+    );
+    transition: all 0.3s;
 }

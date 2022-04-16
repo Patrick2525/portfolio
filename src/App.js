@@ -11,10 +11,10 @@ function App() {
       <Header/>
       <Nav>
         <Menus>
-          <Menu title="About(X)"/>
-          <Menu title="Github(X)"/>
+          <Menu title="Devlog"/>
+          <Menu title="Github"/>
           <Menu title="Posts"/>
-          <Menu title="(X)"/>
+          <Menu title="SubCategory"/>
         </Menus>
       </Nav>
 

@@ -1,16 +1,41 @@
 .nav {
-    border: 3px solid black;
+    /* border: 3px solid black; */
     position: fixed;
     top: 0px;
     width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: center;
+    height: 80px;    
+}
 
+.nav-static {
+    /* border: 2px solid green; */
+    position : absolute;
+    left: 330px;
+    right: 100%;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    border-bottom: 2px solid #dbdbdb;
 }
 
 .barIcon {
     padding: 20px;
-    border: 1px solid red;
-    margin-left: 150px;
+    /* border: 1px solid red; */
+
+}
+
+
+.barIcons,
+.searchIcon {
+    text-decoration: none;
+    color: #000;
+    margin-left: 10px;
+}
+
+.searchIcon {
+    padding: 10px;
+}
+
+.inputSearch {
+    height: 20px;
+
 }
