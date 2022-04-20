@@ -1,9 +1,8 @@
-import "./App.css";
-import Nav from "./Nav";
-import Main from "./Main";
-import Header from "./Header";
-import Menu from "./Menu";
-import Menus from "./Menus";
+import Nav from "./components/Nav";
+import Main from "./components/Main";
+import Header from "./components/Header";
+import Menu from "./components/Menu";
+import Menus from "./components/Menus";
 
 function App() {
   return (

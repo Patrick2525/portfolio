@@ -1,0 +1,17 @@
+.main {
+    position: absolute;
+    top: 80px;
+    left: 330px;
+    padding: 20px;
+    border-top: 2px solid #dbdbdb;
+    
+}
+
+.content {
+    border: 1px solid pink;
+    background-color: pink;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
