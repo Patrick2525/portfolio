@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import { useEffect } from 'react';
+//import { useEffect } from 'react';
 import "../styles/Menu.css";
 
 function Menu({title}) {
   const navigate = useNavigate();
+
   function handleClick() {
     navigate(`/${title}`);
   }
