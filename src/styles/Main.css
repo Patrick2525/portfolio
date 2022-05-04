@@ -4,7 +4,6 @@
     left: 330px;
     padding: 20px;
     border-top: 2px solid #dbdbdb;
-    
 }
 
 .content {
@@ -12,6 +11,5 @@
     background-color: pink;
     display: flex;
     flex-wrap: wrap;
-
 }
 
