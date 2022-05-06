@@ -3,10 +3,11 @@ import "../styles/Header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faSquareEnvelope, faHand } from "@fortawesome/free-solid-svg-icons";
-
+import { useNavigate } from "react-router-dom";
 
 
 function Header() {
+  const navigate = useNavigate();
   const [count, setCount] = useState(0);
   const hitBtn = () => {
     setCount(count + 1);
@@ -17,16 +18,16 @@ function Header() {
       <img className='headerImg' src='https://t3.daumcdn.net/thumb/R720x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/PMDMIJW8MuTlmn0vnoXpKHp4-QQ.JPG'></img>
       <div className='sidebar'>
         <div className='sidebar-header'>
-          <a href="#"><h1 className='sidebar-headerTitle'>Minwoo's Devlog</h1></a>
+          <a href="#" onClick={() => navigate('/')}><h1 className='sidebar-headerTitle'>Minwoo's Devlog</h1></a>
           <p className=''>welcome to my dev-blog :)</p>
         </div>
         <div className='sidebar-nav'>
           <span>Navigation:</span>
           <ul className='sidebar-menus'>
-            <li className='sidebar-menu'><span>Devlog</span></li>
-            <li className='sidebar-menu'><span>Github</span></li>
-            <li className='sidebar-menu'><span>Posts</span></li>
-            <li className='sidebar-menu'><span>SubCategory</span></li>
+            <li className='sidebar-menu' onClick={() => navigate('/Devlog')}><span>Devlog</span></li>
+            <li className='sidebar-menu' onClick={() => navigate('/Github')}><span>Github</span></li>
+            <li className='sidebar-menu' onClick={() => navigate('/Posts')}><span>Posts</span></li>
+            <li className='sidebar-menu' onClick={() => navigate('/SubCategory')}><span>SubCategory</span></li>
           </ul>
         </div>
         <div className='sidebar-social'>

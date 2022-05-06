@@ -1,0 +1,38 @@
+.newPost {
+    position: absolute;
+    top: 80px;
+    left: 330px;
+    padding: 20px;
+    border-top: 2px solid #dbdbdb;
+    display: flex;
+    flex-direction: column;
+}
+
+.newPostHeader {
+    display: flex;
+}
+
+.newPostTitle {
+    margin-left: 20px;
+    width: 600px;
+    height: 30px;
+}
+
+.newPostFooter {
+    margin-top: 20px;
+    display: flex;
+}
+
+
+.newPostContent {
+    margin-left: 20px;
+    width: 600px;
+    height: 600px;
+}
+
+.newPostBtn {
+    margin-top: 20px;
+    margin-left: 55px;
+    width: 100px;
+    cursor: pointer;
+}

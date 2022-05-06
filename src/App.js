@@ -1,13 +1,16 @@
+import React from "react";
 import Nav from "./components/Nav";
-import Main from "./components/Main";
+import Main from "./pages/Main";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import Menus from "./components/Menus";
-import React from "react";
-import Devlog from './components/Devlog';
-import Github from './components/Github';
-import Posts from './components/Posts';
-import SubCategory from './components/SubCategory';
+
+import Devlog from './pages/Devlog';
+import Github from './pages/Github';
+import Posts from './pages/Posts';
+import SubCategory from './pages/SubCategory';
+import NewPost from './pages/NewPost';
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -27,6 +30,7 @@ function App() {
         <Route path="/Devlog" element={<Devlog/>}/>
         <Route path="/Github" element={<Github/>}/>
         <Route path="/Posts" element={<Posts/>}/>
+        <Route path="/NewPost" element={<NewPost/>}/>
         <Route path="/SubCategory" element={<SubCategory/>}/>
       </Routes>
     </BrowserRouter>
