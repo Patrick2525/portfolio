@@ -1,7 +1,7 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React,{useState} from 'react'
 import '../styles/Posts.css';
-import NewPost from './NewPost';
-import { useNavigate} from 'react-router-dom';
+
+
 
 /**
  * post게시물
@@ -12,52 +12,40 @@ import { useNavigate} from 'react-router-dom';
  */
 
 function Posts() {
-  const navigate = useNavigate();
-  const [post, setPost] = useState([]);
-  const [key, setKey] = useState(0);
-  const testvalue = 23;
-  
-  
-  
-  useEffect(() => {
-    //초기값 설정
-  const initiatePost = () => {
-    setKey({
-      'id': '1',
-      'title': 'React에서 Timeout 구현하기',
-      'content': '모바일 지원이 가능한 React 용 탭으로 편집 할 수 있습니다. 이다 React JavaScript 용 탭 기반 API. 예제 페이지에서 세 가지 테마 중에서 선택하고 "문서"버튼을 눌러 Github로 이동할 수 있습니다. 수행 할 수있는 모든 사용자 정의를 보여주는 동일한 예제 페이지에 있습니다.',
-    })
-  }
-  },)
-  
-
-
-  //화면에 뿌리기
-  const displayPost = () => {
-    setKey(key + 1);
-    setPost([...post, {
-      'id': key,
-      'title': NewPost.title,
-      'content':NewPost.content,
-    }]);
-    console.log(post);
-    console.log(React.version);//?
-  }
-
-  // TODO : 삭제
-  const deletePost = () => {
-
-}
-
-
+  const [state, setstate] = useState({
+    posts: [
+      {
+        type : 'react',
+        date : new Date('March 17, 2012 03:28:00'),
+        title : 'useState 사용법',
+        content : '하지만 간혹, 이 setState가 state를 변경시킨다고 오해하시는 분들이 있는거 같아서 이 글을 작성하게 되었습니다'
+      }, {
+        type : 'js',
+        date : new Date('Decomber 17, 2002 03:28:00').toString(), 
+        title : 'eventHandler 사용법',
+        content : '이벤트 핸들러는 잘! 사용하면된다',
+      },
+    ],
+  })
+  const {posts} = state;
   return (
     <div className='posts'>
-      Posts 페이지 입니다
-      <input type='button' value='new' onClick={() => navigate(`/NewPost`)}/>
-      <div>
-        {post.map(item => (<div key= {item.key} className='postList'>
-          {item.content}
-        </div>))}
+      <div className='postHeader'>
+        <h1>Posts</h1>
+        <span>포스팅 전체보기</span>
+        <span>포스팅 주제별</span>
+      </div>
+      <div className='postList'>
+        {
+          posts.map(post => { return(
+            <div key={post.title}>
+              <span>{post.date}</span>
+              <span>{post.type}</span>
+              <span>{post.title}</span>
+              <span>{post.content}</span>
+            </div>
+          )})
+        }
       </div>
     </div>
     
