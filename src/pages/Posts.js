@@ -16,7 +16,7 @@ function Posts() {
     posts: [
       {
         type : 'react',
-        date : new Date('March 17, 2012 03:28:00'),
+        date : new Date('March 17, 2012 03:28:00').toString(),
         title : 'useState 사용법',
         content : '하지만 간혹, 이 setState가 state를 변경시킨다고 오해하시는 분들이 있는거 같아서 이 글을 작성하게 되었습니다'
       }, {
