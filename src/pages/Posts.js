@@ -1,3 +1,4 @@
+import { faChessBoard } from '@fortawesome/free-solid-svg-icons';
 import React,{useState, useRef} from 'react'
 import '../styles/Posts.css';
 
@@ -52,10 +53,12 @@ function Posts() {
       },
     ],
   })
-  const [stateByType, setStateByType] = useState({}) //타입별로 
   const {posts} = state;
+  const [stateShow, setStateShow] = useState({
+    postsShow : posts,
+  });
+  const {postsShow} = stateShow; 
   const currnetYear = useRef('');
-  const [visible, setvisible] = useState(false); // fjkf
   const handleTypeStyle = (type) => {
     let typeColor;
     switch(type) {
@@ -95,59 +98,67 @@ function Posts() {
 
   const TypeSelected = useRef(0);
   const handleSelect = (e) => {
-    TypeSelected.current = e.target.selectedIndex;
-    
+    currnetYear.current='';
     switch(e.target.selectedIndex) {
-      case '0':
+      case 0:
         break;
-      case '1': //HTML
+      case 1: //HTML
         TypeSelected.current = 'html';
         break;
-      case '2': //CSS
+      case 2: //CSS
         TypeSelected.current = 'css';
         break;
-      case '3': //JS
+      case 3: //JS
         TypeSelected.current = 'js';
         break;
-      case '4': //React
+      case 4: //React
         TypeSelected.current = 'React';
         break;
     }
-    console.log(TypeSelected.current);
+    setStateShow({
+      postsShow: posts.filter(post => post.type === TypeSelected.current)
+    })
   }
   
-  const handlePostVisible = (post) => {
-    const type = TypeSelected.current;
-    
-
-
-  }
+  const visibleALL = useRef(false);
+  const visibleType = useRef(true);
   
+  const handleVisible = () => {
+    if(visibleALL.current){
+      visibleALL.current = false;
+      visibleType.current = true;
+    } else {
+      visibleALL.current = true;
+      visibleType.current = false;
+      // 정리도해야됨
+    }
+    //렌더링이 안되서 그럼
+  }
 
 
   return (
     <div className='posts'>
       <div className='postHeader'>
         <h1>Posts</h1>
-        <span className='postHeaderAll'>포스팅 전체보기</span>
-        <span className='postHeaderType'>포스팅 주제별</span>
-        <select className='postTypeSelector' onChange={handleSelect}>
+        {visibleALL.current && <span className='postHeaderAll' onClick={handleVisible}>포스팅 전체보기</span>}
+        {visibleType.current && <span className='postHeaderType' onClick={handleVisible}>포스팅 주제별</span>}
+        {visibleType.current && <select className='postTypeSelector' onChange={handleSelect}>
           <option value='none'>=== 선택 ===</option>
           <option value='html'>HTML</option>
           <option value='css'>CSS</option>
           <option value='js'>JS</option>
           <option value='React'>React</option>
-        </select>
+        </select>}
       </div>
       <div className='postList'>
         {
-          posts.map(post => { return(
+          postsShow.map(post => { return(
             <div key={post.title} >
               <div style={handleYearStyle(post)} className='postListYear'>
                 <div className='postListYearTitle'>{post.date[3]}</div>
                 <div className='postListYearCircle'></div>
               </div>
-              <div className='postListBox' style={handlePostVisible(post)}>
+              <div className='postListBox'>
                 <div className='postListDate'>{`${post.date[2]} ${post.date[1]}` }</div>
                 <div className='postListLine'>
                   <div className='postListLinevertial'></div>
