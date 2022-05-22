@@ -44,16 +44,19 @@ function Posts() {
         date : new Date('Decomber 17, 2020 03:28:00').toDateString().split(' '), 
         title : 'container 사용법',
         content : 'container는 잘! 사용하면된다',
+      }, {
+        type : 'React',
+        date : new Date('Decomber 17, 2021 03:28:00').toDateString().split(' '), 
+        title : 'JSX 사용법',
+        content : 'JSX는 잘! 사용하면된다',
       },
     ],
   })
+  const [stateByType, setStateByType] = useState({}) //타입별로 
   const {posts} = state;
-  const postCountYearly = useState({
-    year : ['2019', '2020'],
-    count : [2, 3],
-  })
-
-  const handleStyle = (type) => {
+  const currnetYear = useRef('');
+  const [visible, setvisible] = useState(false); // fjkf
+  const handleTypeStyle = (type) => {
     let typeColor;
     switch(type) {
       case 'React':
@@ -81,29 +84,81 @@ function Posts() {
 // 2. 변수랑 비교해서 없거나 push 하고 렌더링
 // 3. 없거나 동일하면 no
 
+  const handleYearStyle = (post) => {
+    const year = post.date[3];
+    const id = post.title;
+    if(year === '' || year !== currnetYear.current) {
+      currnetYear.current = year;
+      return {display : 'block'};
+    }
+  }
+
+  const TypeSelected = useRef(0);
+  const handleSelect = (e) => {
+    TypeSelected.current = e.target.selectedIndex;
+    
+    switch(e.target.selectedIndex) {
+      case '0':
+        break;
+      case '1': //HTML
+        TypeSelected.current = 'html';
+        break;
+      case '2': //CSS
+        TypeSelected.current = 'css';
+        break;
+      case '3': //JS
+        TypeSelected.current = 'js';
+        break;
+      case '4': //React
+        TypeSelected.current = 'React';
+        break;
+    }
+    console.log(TypeSelected.current);
+  }
   
+  const handlePostVisible = (post) => {
+    const type = TypeSelected.current;
+    
+
+
+  }
   
+
+
   return (
     <div className='posts'>
       <div className='postHeader'>
         <h1>Posts</h1>
-        <span>포스팅 전체보기</span>
-        <span>포스팅 주제별</span>
+        <span className='postHeaderAll'>포스팅 전체보기</span>
+        <span className='postHeaderType'>포스팅 주제별</span>
+        <select className='postTypeSelector' onChange={handleSelect}>
+          <option value='none'>=== 선택 ===</option>
+          <option value='html'>HTML</option>
+          <option value='css'>CSS</option>
+          <option value='js'>JS</option>
+          <option value='React'>React</option>
+        </select>
       </div>
       <div className='postList'>
         {
           posts.map(post => { return(
-            <div key={post.title} className='postListBox'>
-              <div className='postListDate'>{`${post.date[2]} ${post.date[1]}` }</div>
-              <div className='postListLine'>
-                <div className='postListLinevertial'></div>
-                <div className='postListLineCircle'></div>
+            <div key={post.title} >
+              <div style={handleYearStyle(post)} className='postListYear'>
+                <div className='postListYearTitle'>{post.date[3]}</div>
+                <div className='postListYearCircle'></div>
               </div>
-              <div className='postListType'>
-                <span style={handleStyle(post.type)}>{post.type}</span>
-              </div>
-              <div className='postListTitle'>
-                <span>{post.title}</span>
+              <div className='postListBox' style={handlePostVisible(post)}>
+                <div className='postListDate'>{`${post.date[2]} ${post.date[1]}` }</div>
+                <div className='postListLine'>
+                  <div className='postListLinevertial'></div>
+                  <div className='postListLineCircle'></div>
+                </div>
+                <div className='postListType'>
+                  <span style={handleTypeStyle(post.type)}>{post.type}</span>
+                </div>
+                <div className='postListTitle'>
+                  <span>{post.title}</span>
+                </div>
               </div>
             </div>
           )})
