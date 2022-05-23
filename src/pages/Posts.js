@@ -340,12 +340,14 @@ function Posts() {
     }
   }
   
-  const contentEx = useRef({});
-  const [styleContent, setStyleContent] = useState({});
+  const titleLength = useRef();
   const handleContent = () => {
-    
+    //실제 content창으로 넘어가는 함수
   }
-
+  const handleMouseOver = (titleLength) => {
+    console.log('hey');
+    console.log(titleLength);
+  }
 
   return (
     <div className='posts'>
@@ -378,7 +380,7 @@ function Posts() {
                 <div className='postListType'>
                   <span style={handleTypeStyle(post.type)}>{post.type}</span>
                 </div>
-                <div className='postListTitle'>
+                <div className='postListTitle' ref={titleLength} onMouseOver={()=>handleMouseOver(titleLength)}>
                   <span>{post.title}</span>
                 </div>
                 <div className='postListContent'>

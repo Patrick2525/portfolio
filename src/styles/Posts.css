@@ -117,7 +117,7 @@
 
 .postListBox:hover >.postListDate,
 .postListBox:hover >.postListType,
-.postListTitle span:hover >.postListTitle {
+.postListBox:hover >.postListTitle {
     transform: translateX(4px);
     transition: all 0.5s;
     cursor: pointer;
