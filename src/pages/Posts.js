@@ -17,25 +17,120 @@ function Posts() {
     posts: [
       {
         type : 'React',
-        date : new Date('March 17, 2019 03:28:00').toDateString().split(' '), 
+        date : new Date('January 17, 2019 03:28:00').toDateString().split(' '), 
         title : 'useState 사용법',
-        content : '하지만 간혹, 이 setState가 state를 변경시킨다고 오해하시는 분들이 있는거 같아서 이 글을 작성하게 되었습니다'
+        content : 'useState는 잘! 사용하면된다'
       }, {
         type : 'js',
-        date : new Date('Decomber 17, 2019 03:28:00').toDateString().split(' '), 
+        date : new Date('January 28, 2019 03:28:00').toDateString().split(' '), 
         title : 'eventHandler 사용법',
         content : '이벤트 핸들러는 잘! 사용하면된다',
       }, {
+        type : 'html',
+        date : new Date('March 2, 2019 03:28:00').toDateString().split(' '), 
+        title : 'html 꿀팁1',
+        content : 'semantic 태그 활용법',
+      }, {
+        type : 'html',
+        date : new Date('June 17, 2019 03:28:00').toDateString().split(' '), 
+        title : 'html 꿀팁2',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다. 그런데 저는 지금까지 자바스크립트로 개발하면서 메모리를 직접 해제해 본 기억이 없었습니다. 과연 자바스크립트는 어떤 방식으로 메모리를 해제하는 걸까요? (이 글은 v8 엔진 기준으로 작성하였습니다)',
+      },{
+        type : 'css',
+        date : new Date('August 21, 2019 03:28:00').toDateString().split(' '), 
+        title : 'css UI1',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다. 그런데 저는 지금까지 자바스크립트로 개발하면서 메모리를 직접 해제해 본 기억이 없었습니다. 과연 자바스크립트는 어떤 방식으로 메모리를 해제하는 걸까요? (이 글은 v8 엔진 기준으로 작성하였습니다)',
+      },{
+        type : 'html',
+        date : new Date('September 12, 2019 03:28:00').toDateString().split(' '), 
+        title : 'html 꿀팁3',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'css',
+        date : new Date('October 11, 2019 03:28:00').toDateString().split(' '), 
+        title : 'css UI2',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{ 
         type : 'React',
         date : new Date('Decomber 17, 2019 03:28:00').toDateString().split(' '), 
         title : 'useRef 사용법',
         content : 'useRef는 잘! 사용하면된다',
-      }, {
+      }, { //2020----------------------------------------------------------------------
         type : 'html',
-        date : new Date('Decomber 17, 2020 03:28:00').toDateString().split(' '), 
+        date : new Date('January 17, 2020 03:28:00').toDateString().split(' '), 
         title : 'ptag 사용법',
         content : 'ptag는 잘! 사용하면된다',
       }, {
+        type : 'html',
+        date : new Date('January 2, 2020 03:28:00').toDateString().split(' '), 
+        title : 'html 꿀팁4',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'html',
+        date : new Date('February 14, 2020 03:28:00').toDateString().split(' '), 
+        title : 'html 꿀팁5',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'css',
+        date : new Date('March 22, 2020 03:28:00').toDateString().split(' '), 
+        title : 'css UI3',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'css',
+        date : new Date('April 28, 2020 03:28:00').toDateString().split(' '), 
+        title : 'css UI4',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'js',
+        date : new Date('April 27, 2020 03:28:00').toDateString().split(' '), 
+        title : '자바스크립트 v8 엔진의 가비지 컬렉션 동작 방식',
+        content : '잘 작동한다',
+      },{
+        type : 'js',
+        date : new Date('April 28, 2020 03:28:00').toDateString().split(' '), 
+        title : 'js 에러 핸들링 하는 법1',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'html',
+        date : new Date('May 3, 2020 03:28:00').toDateString().split(' '), 
+        title : 'html 꿀팁6',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'js',
+        date : new Date('June 2, 2020 03:28:00').toDateString().split(' '), 
+        title : 'js 모듈 이슈',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'css',
+        date : new Date('June 13, 2020 03:28:00').toDateString().split(' '), 
+        title : 'css UI5',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'js',
+        date : new Date('July 22, 2020 03:28:00').toDateString().split(' '), 
+        title : '머신러닝 모델로 동네생활 신고 업무 자동화하기',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'css',
+        date : new Date('August 25, 2020 03:28:00').toDateString().split(' '), 
+        title : 'css UI6',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'css',
+        date : new Date('October 7, 2020 03:28:00').toDateString().split(' '), 
+        title : '웹에서 다크모드 지원하기',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'js',
+        date : new Date('November 8, 2020 03:28:00').toDateString().split(' '), 
+        title : 'TypeScript를 활용한 서비스개발',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'css',
+        date : new Date('December 28, 2020 03:28:00').toDateString().split(' '), 
+        title : 'css UI7',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
         type : 'css',
         date : new Date('Decomber 17, 2020 03:28:00').toDateString().split(' '), 
         title : 'flexbox 사용법',
@@ -45,11 +140,86 @@ function Posts() {
         date : new Date('Decomber 17, 2020 03:28:00').toDateString().split(' '), 
         title : 'container 사용법',
         content : 'container는 잘! 사용하면된다',
-      }, {
+      }, { //2021----------------------------------------------------------------------
         type : 'React',
-        date : new Date('Decomber 17, 2021 03:28:00').toDateString().split(' '), 
+        date : new Date('January 17, 2021 03:28:00').toDateString().split(' '), 
         title : 'JSX 사용법',
         content : 'JSX는 잘! 사용하면된다',
+      },{
+        type : 'html',
+        date : new Date('February 2, 2021 03:28:00').toDateString().split(' '), 
+        title : 'html 꿀팁7',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'React',
+        date : new Date('February 4, 2021 03:28:00').toDateString().split(' '), 
+        title : 'Suspense와 선언적으로 Data fetching처리',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'js',
+        date : new Date('February 4, 2021 03:28:00').toDateString().split(' '), 
+        title : 'js 에러 핸들링 하는 법2',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'React',
+        date : new Date('March 15, 2021 03:28:00').toDateString().split(' '), 
+        title : '사용자 경험과 성능 개선 방법',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'html',
+        date : new Date('April 22, 2021 03:28:00').toDateString().split(' '), 
+        title : 'html 꿀팁8',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'React',
+        date : new Date('May 20, 2021 03:28:00').toDateString().split(' '), 
+        title : '리액트로 만든 게임에 사운드 추가하기',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'js',
+        date : new Date('June 29, 2021 03:28:00').toDateString().split(' '), 
+        title : 'js 에러 핸들링 하는 법3',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'React',
+        date : new Date('July 1, 2021 03:28:00').toDateString().split(' '), 
+        title : 'React에서 서버 데이터를 최신으로 관리하기(React Query, SWR)',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'js',
+        date : new Date('August 14, 2021 03:28:00').toDateString().split(' '), 
+        title : 'js 에러 핸들링 하는 법4',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'React',
+        date : new Date('September 19, 2021 03:28:00').toDateString().split(' '), 
+        title : 'Runtime 환경 변수 설정으로 빌드 프로세스 개선하기',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'js',
+        date : new Date('September 30, 2021 03:28:00').toDateString().split(' '), 
+        title : 'js 에러 핸들링 하는 법5',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'css',
+        date : new Date('October 9, 2021 03:28:00').toDateString().split(' '), 
+        title : 'css UI8',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'html',
+        date : new Date('November 18, 2021 03:28:00').toDateString().split(' '), 
+        title : 'html 꿀팁9',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'js',
+        date : new Date('December 20, 2021 03:28:00').toDateString().split(' '), 
+        title : 'js 에러 핸들링 하는 법6',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
+      },{
+        type : 'React',
+        date : new Date(', 2021 03:28:00').toDateString().split(' '), 
+        title : '아토믹 디자인을 활용한 디자인 시스템 도입기',
+        content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
       },
     ],
   })
@@ -120,19 +290,60 @@ function Posts() {
     })
   }
   
-  const visibleALL = useRef(false);
-  const visibleType = useRef(true);
-  
-  const handleVisible = () => {
-    if(visibleALL.current){
-      visibleALL.current = false;
-      visibleType.current = true;
-    } else {
-      visibleALL.current = true;
-      visibleType.current = false;
-      // 정리도해야됨
+  const [selectedAll, setSelectedAll] = useState(true);
+  const [selectedType, setSelectedType] = useState(false);
+  const [visibleSelect, setvisibleSelect] = useState(false); // 수정
+  const [styleHeaderAll, setStyleHeaderAll] = useState({});
+  const [styleHeaderType, setStyleHeaderType] = useState({});
+
+  const handleAllSelected = () => { //all 버튼 클릭시
+    if(!selectedAll){ // type => all
+      setSelectedAll(true);
+      setStyleHeaderAll({
+        fontSize: '20px',
+        color: 'black',
+        fontWeight: 'bold',
+        cursor: 'default',
+      });
+      setStyleHeaderType({
+        fontSize: '13px',
+        color: 'rgb(199,199,199)',
+        fontWeight: 'normal',
+        cursor: 'pointer',
+      })
+      setSelectedAll(true);
+      setSelectedType(false);
+      setvisibleSelect(false);
+      setStateShow({
+        postsShow: posts,
+      });
+    } 
+  }
+
+  const handleTypeSelected = () => { // All버튼 클릭시
+    if(!selectedType) { // all-> type
+      setStyleHeaderType({
+        fontSize: '20px',
+        color: 'black',
+        fontWeight: 'bold',
+        cursor: 'default',
+      })
+      setStyleHeaderAll({
+        fontSize: '13px',
+        color: 'rgb(199,199,199)',
+        fontWeight: 'normal',
+        cursor: 'pointer',
+      })
+      setSelectedType(true);
+      setSelectedAll(false);
+      setvisibleSelect(true);
     }
-    //렌더링이 안되서 그럼
+  }
+  
+  const contentEx = useRef({});
+  const [styleContent, setStyleContent] = useState({});
+  const handleContent = () => {
+    
   }
 
 
@@ -140,9 +351,9 @@ function Posts() {
     <div className='posts'>
       <div className='postHeader'>
         <h1>Posts</h1>
-        {visibleALL.current && <span className='postHeaderAll' onClick={handleVisible}>포스팅 전체보기</span>}
-        {visibleType.current && <span className='postHeaderType' onClick={handleVisible}>포스팅 주제별</span>}
-        {visibleType.current && <select className='postTypeSelector' onChange={handleSelect}>
+        <span className='postHeaderAll' style={styleHeaderAll} onClick={handleAllSelected}>ALL</span>
+        <span className='postHeaderType' style={styleHeaderType} onClick={handleTypeSelected}>Type</span>
+        {visibleSelect && <select className='postTypeSelector' onChange={handleSelect}>
           <option value='none'>=== 선택 ===</option>
           <option value='html'>HTML</option>
           <option value='css'>CSS</option>
@@ -158,7 +369,7 @@ function Posts() {
                 <div className='postListYearTitle'>{post.date[3]}</div>
                 <div className='postListYearCircle'></div>
               </div>
-              <div className='postListBox'>
+              <div className='postListBox' onClick={handleContent}>
                 <div className='postListDate'>{`${post.date[2]} ${post.date[1]}` }</div>
                 <div className='postListLine'>
                   <div className='postListLinevertial'></div>
@@ -169,6 +380,9 @@ function Posts() {
                 </div>
                 <div className='postListTitle'>
                   <span>{post.title}</span>
+                </div>
+                <div className='postListContent'>
+                  <span>{post.content}</span>
                 </div>
               </div>
             </div>
