@@ -344,9 +344,9 @@ function Posts() {
   const handleContent = () => {
     //실제 content창으로 넘어가는 함수
   }
-  const handleMouseOver = (titleLength) => {
-    console.log('hey');
-    console.log(titleLength);
+  const handleMouseOver = (titleLength) => { //05/24 구현중
+    // console.log('hey');
+    // console.log(titleLength);
   }
 
   return (
