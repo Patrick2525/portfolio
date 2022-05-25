@@ -1,33 +1,30 @@
 import React,{useRef, useState} from 'react'
 import '../styles/Github.css';
+
 function Github() {
-  const testRef = useRef();
-  const [state, setstate] = useState();
-
-  const test = () => {
-    console.log('test함수 실행');
+  const dataRef = useRef();
+  const testFunc = (e) => {
+    console.log(dataRef);
+    console.log(e.target.style);
+    //const color = dataRef.current.???;
   }
-
-  const testfunc = () => {
-    console.log('testfunc입니다');
-  }
+  const bitcoin_data = useRef();
+  fetch("https://api.bithumb.com/public/ticker/BTC_KRW")
+    .then(function(res){
+      return res.json();
+    })
+    .then(function(result){
+      bitcoin_data.current = result;
+      console.log(bitcoin_data);
+    })
+    //3회차 03:35:14
 
   return (
     <div className='github'>
-      <div className='' onClick={testfunc}>git 페이지 입니다</div>
-      <MyComponent Ref={testRef} myFunction={testfunc}/>
+      <div className='call' ref={dataRef} onClick={testFunc}>div</div>
     </div>
   )
 }
 
 export default Github
 
-
-
-
-function MyComponent() {
-  
-  return (
-    <div>자식 컴포넌트 입니다</div>
-  ) 
-}
