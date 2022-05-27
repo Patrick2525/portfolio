@@ -1,4 +1,4 @@
-import React,{useRef, useState} from 'react'
+import React,{useEffect, useRef, useState} from 'react'
 import '../styles/Github.css';
 
 function Github() {
@@ -8,16 +8,21 @@ function Github() {
     console.log(e.target.style);
     //const color = dataRef.current.???;
   }
-  const bitcoin_data = useRef();
-  fetch("https://api.bithumb.com/public/ticker/BTC_KRW")
-    .then(function(res){
-      return res.json();
-    })
-    .then(function(result){
-      bitcoin_data.current = result;
-      console.log(bitcoin_data);
-    })
-    //3회차 03:35:14
+  const [state, setState] = useState();
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/posts/')
+    .then((response) => response.json())
+    .then((json) =>{
+      setState( {post : json});
+      state.post.map((data) => {
+        console.log(data);
+      })
+    });
+  },[])
+
+  
+
 
   return (
     <div className='github'>

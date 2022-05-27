@@ -2,8 +2,6 @@ import { faChessBoard } from '@fortawesome/free-solid-svg-icons';
 import React,{useState, useRef} from 'react'
 import '../styles/Posts.css';
 
-
-
 /**
  * post게시물
  * 1. 분류 : css, html, react, ...
@@ -38,7 +36,7 @@ function Posts() {
       },{
         type : 'css',
         date : new Date('August 21, 2019 03:28:00').toDateString().split(' '), 
-        title : 'css UI1',
+        title : '이미지 최적화에 대한 명확한 가이드',
         content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다. 그런데 저는 지금까지 자바스크립트로 개발하면서 메모리를 직접 해제해 본 기억이 없었습니다. 과연 자바스크립트는 어떤 방식으로 메모리를 해제하는 걸까요? (이 글은 v8 엔진 기준으로 작성하였습니다)',
       },{
         type : 'html',
@@ -48,7 +46,7 @@ function Posts() {
       },{
         type : 'css',
         date : new Date('October 11, 2019 03:28:00').toDateString().split(' '), 
-        title : 'css UI2',
+        title : '웹 접근성의 기본 사항',
         content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
       },{ 
         type : 'React',
@@ -73,12 +71,12 @@ function Posts() {
       },{
         type : 'css',
         date : new Date('March 22, 2020 03:28:00').toDateString().split(' '), 
-        title : 'css UI3',
+        title : '프론트엔드 추천 자료 모음',
         content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
       },{
         type : 'css',
         date : new Date('April 28, 2020 03:28:00').toDateString().split(' '), 
-        title : 'css UI4',
+        title : '다양한 방식의 리액트 컴포넌트 스타일링 방식',
         content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
       },{
         type : 'js',
@@ -103,7 +101,7 @@ function Posts() {
       },{
         type : 'css',
         date : new Date('June 13, 2020 03:28:00').toDateString().split(' '), 
-        title : 'css UI5',
+        title : 'Pseudo class',
         content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
       },{
         type : 'js',
@@ -113,7 +111,7 @@ function Posts() {
       },{
         type : 'css',
         date : new Date('August 25, 2020 03:28:00').toDateString().split(' '), 
-        title : 'css UI6',
+        title : 'Normal Flow',
         content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
       },{
         type : 'css',
@@ -128,7 +126,7 @@ function Posts() {
       },{
         type : 'css',
         date : new Date('December 28, 2020 03:28:00').toDateString().split(' '), 
-        title : 'css UI7',
+        title : 'minmax, min-content, max-content',
         content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
       },{
         type : 'css',
@@ -138,8 +136,8 @@ function Posts() {
       }, {
         type : 'React',
         date : new Date('Decomber 17, 2020 03:28:00').toDateString().split(' '), 
-        title : 'container 사용법',
-        content : 'container는 잘! 사용하면된다',
+        title : '리액트는 언제 컴포넌트를 렌더링 하나요?',
+        content : '잘! 사용하면된다',
       }, { //2021----------------------------------------------------------------------
         type : 'React',
         date : new Date('January 17, 2021 03:28:00').toDateString().split(' '), 
@@ -158,7 +156,7 @@ function Posts() {
       },{
         type : 'js',
         date : new Date('February 4, 2021 03:28:00').toDateString().split(' '), 
-        title : 'js 에러 핸들링 하는 법2',
+        title : '입문자를 위한 Axios vs Fetch',
         content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
       },{
         type : 'React',
@@ -178,7 +176,7 @@ function Posts() {
       },{
         type : 'js',
         date : new Date('June 29, 2021 03:28:00').toDateString().split(' '), 
-        title : 'js 에러 핸들링 하는 법3',
+        title : '프론트엔드 테스팅 전략',
         content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
       },{
         type : 'React',
@@ -188,7 +186,7 @@ function Posts() {
       },{
         type : 'js',
         date : new Date('August 14, 2021 03:28:00').toDateString().split(' '), 
-        title : 'js 에러 핸들링 하는 법4',
+        title : '네 시대의 자바스크립트 프레임워크',
         content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
       },{
         type : 'React',
@@ -198,12 +196,12 @@ function Posts() {
       },{
         type : 'js',
         date : new Date('September 30, 2021 03:28:00').toDateString().split(' '), 
-        title : 'js 에러 핸들링 하는 법5',
+        title : '자바스크립트 엔진이 뛰어난 성능을 달성하는 방법',
         content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
       },{
         type : 'css',
         date : new Date('October 9, 2021 03:28:00').toDateString().split(' '), 
-        title : 'css UI8',
+        title : 'Chrome Dev Tool',
         content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
       },{
         type : 'html',
@@ -213,7 +211,7 @@ function Posts() {
       },{
         type : 'js',
         date : new Date('December 20, 2021 03:28:00').toDateString().split(' '), 
-        title : 'js 에러 핸들링 하는 법6',
+        title : '자바스크립트 번들러 만들기',
         content : '자바스크립트 데이터 타입에 관심이 생김에 따라 자연스럽게 메모리 공간의 확보와 참조 그리고 해제를 공부했습니다. C 언어 같은 저수준 언어는 free() 함수를 통해 개발자가 수동으로 메모리를 해제해야 합니다.',
       },{
         type : 'React',
