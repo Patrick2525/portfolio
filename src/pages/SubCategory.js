@@ -22,6 +22,7 @@ function SubCategory() {
     fetchPosts();
   }, [])
   
+  console.log('렌더링');
   //get current posts
   const indexOfLastPost = currentPage * postsPerPage; // 현재보고있는창의 마지막 게시물 index
   const indexOfFirstPost = indexOfLastPost - postsPerPage; // 현재 보고있는창의 첫번째 게시물 index
