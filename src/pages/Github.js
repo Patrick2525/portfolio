@@ -10,16 +10,16 @@ function Github() {
   }
   const [state, setState] = useState();
 
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts/')
-    .then((response) => response.json())
-    .then((json) =>{
-      setState( {post : json});
-      state.post.map((data) => {
-        console.log(data);
-      })
-    });
-  },[])
+  // useEffect(() => {
+  //   fetch('https://jsonplaceholder.typicode.com/posts/')
+  //   .then((response) => response.json())
+  //   .then((json) =>{
+  //     setState( {post : json});
+  //     state.post.map((data) => {
+  //       console.log(data);
+  //     })
+  //   });
+  // },[])
 
   
 
