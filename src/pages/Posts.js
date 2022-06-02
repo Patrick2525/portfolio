@@ -1,5 +1,5 @@
 import { faChessBoard } from '@fortawesome/free-solid-svg-icons';
-import React,{useState, useRef} from 'react'
+import React,{useState, useRef, useEffect} from 'react'
 import '../styles/Posts.css';
 
 /**
@@ -10,8 +10,8 @@ import '../styles/Posts.css';
  * 4. 내용 : 어쩌구 저쩌구
  */
 
-function Posts() {
-  const [state, setstate] = useState({
+function Posts() { 
+  const [state, setstate] = useState({ //전체 데이터(Posts)
     posts: [
       {
         type : 'React',
@@ -221,13 +221,17 @@ function Posts() {
       },
     ],
   })
-  const {posts} = state;
-  const [stateShow, setStateShow] = useState({
+  const {posts} = state; // 비구조화 할당 state.posts
+
+  const [stateShow, setStateShow] = useState({ //렌더링 데이터(stateShow)
     postsShow : posts,
   });
-  const {postsShow} = stateShow; 
-  const currnetYear = useRef('');
-  const handleTypeStyle = (type) => {
+  const {postsShow} = stateShow; // 비구조화 할당 stateShow.postsShow
+
+  const currnetYear = useRef(''); // 배열의 year이랑 비교하기 위한 변수 => display 결정
+
+
+  const handleTypeStyle = (type) => { // 타입 별 색상 css적용하는 함수
     let typeColor;
     switch(type) {
       case 'React':
@@ -248,14 +252,7 @@ function Posts() {
     return { backgroundColor : typeColor }
   }
 
-
-//   년도 뿌리기
-
-// 1. 년도를 저장할 변수
-// 2. 변수랑 비교해서 없거나 push 하고 렌더링
-// 3. 없거나 동일하면 no
-
-  const handleYearStyle = (post) => {
+  const handleYearStyle = (post) => { // 년도 비교해서 currentYear이랑 리스트year이랑 다를시 display
     const year = post.date[3];
     const id = post.title;
     if(year === '' || year !== currnetYear.current) {
@@ -264,8 +261,8 @@ function Posts() {
     }
   }
 
-  const TypeSelected = useRef(0);
-  const handleSelect = (e) => {
+  const TypeSelected = useRef(0); // 선택된 타입 => 해당 타입말고는 전부 안보이기위해 사용하는 변수 
+  const handleSelect = (e) => { // 체크박스 => string으로 typeselected에 저장해주는 함수
     currnetYear.current='';
     switch(e.target.selectedIndex) {
       case 0:
@@ -284,13 +281,13 @@ function Posts() {
         break;
     }
     setStateShow({
-      postsShow: posts.filter(post => post.type === TypeSelected.current)
+      postsShow: posts.filter(post => post.type === TypeSelected.current),
     })
   }
   
   const [selectedAll, setSelectedAll] = useState(true);
   const [selectedType, setSelectedType] = useState(false);
-  const [visibleSelect, setvisibleSelect] = useState(false); // 수정
+  const [visibleSelect, setvisibleSelect] = useState(false);
   const [styleHeaderAll, setStyleHeaderAll] = useState({});
   const [styleHeaderType, setStyleHeaderType] = useState({});
 
@@ -347,13 +344,72 @@ function Posts() {
     // console.log(titleLength);
   }
 
+  const [selectTimelog, setSelectTimelog] = useState(true);
+  const [selectBoard, setSelectBoard] = useState(false);
+
+  const handleSelectTimelog = () => {
+    if(!selectTimelog) {
+      setSelectTimelog(true);
+      setSelectBoard(false);
+    }
+  }
+  const handleSelectBoard = () => {
+    if(!selectBoard) {
+      setSelectBoard(true);
+      setSelectTimelog(false);
+    }
+  }
+
+
+  // [flag, setFlag] = useState(0)
+  // <div className = {flag ? "data" : ""}>
+
+  const [postsAPI, setPostsAPI] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(9);
+
+  useEffect(() => {
+    const fetchPosts = () => {
+      setLoading(true);
+      fetch('https://jsonplaceholder.typicode.com/posts')
+        .then(res => res.json())
+        .then(res => {
+          console.log(res);
+          setPostsAPI(res);
+          console.log(posts);
+        });
+      setLoading(false);
+    }
+    
+    fetchPosts();
+  }, [])
+  
+  console.log('렌더링');
+  //get current posts
+  const indexOfLastPost = currentPage * postsPerPage; // 현재보고있는창의 마지막 게시물 index
+  const indexOfFirstPost = indexOfLastPost - postsPerPage; // 현재 보고있는창의 첫번째 게시물 index
+  const currentPosts = postsShow.slice(indexOfFirstPost, indexOfLastPost); // 현재 띄워줄 페이지 전체 배열
+
+  const pageNumbers = [];
+  for(let i = 1;i <=Math.ceil(postsShow.length / postsPerPage); i++){
+    pageNumbers.push(i);
+  }  
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+
   return (
     <div className='posts'>
       <div className='postHeader'>
         <h1>Posts</h1>
-        <span className='postHeaderAll' style={styleHeaderAll} onClick={handleAllSelected}>ALL</span>
-        <span className='postHeaderType' style={styleHeaderType} onClick={handleTypeSelected}>Type</span>
-        {visibleSelect && <select className='postTypeSelector' onChange={handleSelect}>
+        <ul className='Category'>
+          <li className={selectTimelog? 'categorySelected' : 'categoryNonSelected'} onClick={handleSelectTimelog}>TimeLog</li>
+          <li className={selectBoard? 'categorySelected' : 'categoryNonSelected'} onClick={handleSelectBoard}>Board</li>
+        </ul>    
+        <span className='showAllType' style={styleHeaderAll} onClick={handleAllSelected}>ALL</span>
+        <span className='showSelectedType' style={styleHeaderType} onClick={handleTypeSelected}>Type</span>
+        {visibleSelect && <select className='typeSelector' onChange={handleSelect}>
           <option value='none'>=== 선택 ===</option>
           <option value='html'>HTML</option>
           <option value='css'>CSS</option>
@@ -361,36 +417,62 @@ function Posts() {
           <option value='React'>React</option>
         </select>}
       </div>
-      <div className='postList'>
+
+
+      <div className='postsContent'>
         {
-          postsShow.map(post => { return(
-            <div key={post.title} >
-              <div style={handleYearStyle(post)} className='postListYear'>
-                <div className='postListYearTitle'>{post.date[3]}</div>
-                <div className='postListYearCircle'></div>
+          selectTimelog && <div className='postsTimelog'>
+            { postsShow.map(post => { return(
+              <div key={post.title}>
+                <div style={handleYearStyle(post)} className='postYear'>
+                  <div className='postYearTitle'>{post.date[3]}</div>
+                  <div className='postYearCircle'></div>
+                </div>
+                <div className='postListBox' onClick={handleContent}>
+                  <div className='postListDate'>{`${post.date[2]} ${post.date[1]}`}</div>
+                  <div className='postLine'>
+                    <div className='postListLinevertial'></div>
+                    <div className='postListLineCircle'></div>
+                  </div>
+                  <div className='postType'>
+                    <span style={handleTypeStyle(post.type)}>{post.type}</span>
+                  </div>
+                  <div className='postTitle' ref={titleLength} onMouseOver={()=>handleMouseOver(titleLength)}>
+                    <span>{post.title}</span>
+                  </div>
+                  <div className='postContent'>
+                    <span>{post.content}</span>
+                  </div>
+                </div>
               </div>
-              <div className='postListBox' onClick={handleContent}>
-                <div className='postListDate'>{`${post.date[2]} ${post.date[1]}` }</div>
-                <div className='postListLine'>
-                  <div className='postListLinevertial'></div>
-                  <div className='postListLineCircle'></div>
+            )})}  
+          </div>
+        }
+        {
+          selectBoard && <div className='postsBoard'>
+            <div className='postContainer'>
+              {currentPosts.map(post => (
+                <div key={post.title} className='postsBox'>
+                  <div className='postImg'></div>
+                  <div>{post.type}</div>
+                  {/* ...으로 제목 줄이기 */}
+                  <div>{post.title}</div>
                 </div>
-                <div className='postListType'>
-                  <span style={handleTypeStyle(post.type)}>{post.type}</span>
-                </div>
-                <div className='postListTitle' ref={titleLength} onMouseOver={()=>handleMouseOver(titleLength)}>
-                  <span>{post.title}</span>
-                </div>
-                <div className='postListContent'>
-                  <span>{post.content}</span>
-                </div>
-              </div>
+              ))}
             </div>
-          )})
+            {
+              <ul className='pagination'>
+                {pageNumbers.map(number => (
+                  <li key={number} className={(number==currentPage)?'pageNumber pageNumberClicked':'pageNumber'} onClick={() => paginate(number)}>
+                    {number}
+                  </li>
+                ))}
+              </ul>
+            }
+          </div>
         }
       </div>
     </div>
-    
   )
 }
 
